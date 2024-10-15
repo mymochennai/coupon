@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engine Oil Cashback Redemption</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }   
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            border-radius: 15px;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .qr-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .qr-container img {
+            max-width: 150px;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+        table,th, td {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td, {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+th {
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                
+
+                <!-- Step 1: Enter Phone Number -->
+                
+                <!-- Step 3: Registration or Cashback -->
+                <div class="card shadow p-4 mt-4" id="dashboardSection" style="display:;">
+                    <h5 class="card-title text-center">Dash Board</h5>
+                    <div class="card-body">
+                        <form id="cashbackForm">
+                            <div class="mb-3">
+                                <h2>Account Details</h2>
+
+                                <table>
+                                  <tr>
+                                    <th>Cash Back</th>
+                                    <th>Points</th>
+                                    <th>Transation Details</th>
+                                  </tr>
+                                  <tr>
+                                    <td>100</td>
+                                    <td>-</td>
+                                    <td>Amount credited on 01/05/2024 Rs.100.00</td>
+                                  </tr>
+                                  <tr>
+                                    <td>-</td>
+                                    <td>1000</td>
+                                    <td>Points added on 07/06/2024 </td>
+                                  </tr>
+                                  <tr>
+                                    <td>10</td>
+                                    <td>-</td>
+                                    <td>Amount credited on 09/10/2024 Rs.10.00</td>
+                                  </tr>
+                                  <tr>
+                                    <td>-</td>
+                                    <td>1000</td>
+                                    <td>Points added on 13/10/2024</td>
+                                  </tr>
+                                  
+                                </table>
+                                
+                                </div>
+                                
+                               <!--<button type="button" class="btn btn-custom w-100" onclick="logout()">Logout</button><br><br> -->
+                               <button type="button" class="btn btn-custom w-100" onclick="myFunction()">Logout</button>
+                               <!-- <button type="button" class="btn btn-custom w-100" onclick="savePoints()">Save as Points</button> -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+             <!-- Step 4: Redeem Points -->
+                <div class="card shadow p-4 mt-4" id="redeemSection" style="display: none;">
+                    <h5 class="card-title text-center">Redeem Points</h5>
+                    <div class="card-body">
+                    <form id="redeemPoints">
+                        <button type="button" class="btn btn-custom w-100" onclick="savePoints()">Save as Points</button>
+                    </form>
+                </div>
+                 <!-- Step 5: Disply Points -->
+                 <div class="card shadow p-4 mt-4" id="displySection" style="display: none;">
+                    <h5 class="card-title text-center">Points</h5>
+                    <div class="card-body">
+                    <form id="displaySection">
+                        <button type="button" class="btn btn-custom w-100" onclick="displayPoints()">Points</button>
+                    </form>
+                    </div>
+                </div>
+
+ 
+ <!-- Bootstrap JS and Popper.js -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+ <script>
+                       //  Send OTP
+                        function logout1() {
+                            var phone = document.getElementById('phoneNumber').value;
+                            if (phone) {
+                                // Mock OTP sending
+                                alert('OTP sent to ' + phone);
+                                document.getElementById('otpSection').style.display = 'block';
+                                document.getElementById('otpCode').focus();
+
+                            }
+                        }
+                        //  Verify OTP
+                        function verifyOTP() {
+                            var otp = document.getElementById('otpCode').value;
+                            if (otp) {
+                                // Mock OTP verification
+                                alert('OTP verified');
+                                document.getElementById('cashbackSection').style.display = 'block';
+                               // document.getElementById('userPhone').innerText = document.getElementById('phoneNumber').value;
+                              //  document.getElementById('redeemCashback').focus();
+
+                            }
+                            else{
+                            alert('OTP invalid');
+                            }
+                        }
+                        //  Cash Back
+                        function redeemCashback() {
+                                alert('Cashback redeemed via UPI QR code');
+                                document.getElementById('redeemSection').style.display = 'block';
+                                document.getElementById('redeemCashback').focus();
+
+                        }
+                        function logout() {
+                            alert("You selected 'Cash Now'. Processing payment...");
+
+                        }
+
+                        //  Save Points
+                        function savePoints() {
+                            alert("Your points will be saved."); 
+                            document.getElementById('displaySection').style.display = 'block';
+                           // alert("Any Time you can Redeem your Points");
+                        }
+                        //  Display Points
+                        function displaySection() {
+                                alert('Cashback redeemed via UPI QR code');
+                                document.getElementById('displaySection').style.display = 'block';
+                                document.getElementById('displaySection').focus();
+                               
+
+                        }
+                        function myFunction() {
+                                location.replace("index.html")
+                        }
+                       
+                        
+
+                       
+ </script>
+
+</body>
+</html>
